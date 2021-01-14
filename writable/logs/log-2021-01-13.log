@@ -1,0 +1,67 @@
+CRITICAL - 2021-01-13 14:31:37 --> noauth filter must have a matching alias defined.
+#0 C:\Users\bool\Desktop\framework\system\Filters\Filters.php(324): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('noauth')
+#1 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(373): CodeIgniter\Filters\Filters->enableFilter('noauth', 'before')
+#2 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\bool\Desktop\framework\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\bool\Desktop\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\bool\\D...')
+#5 {main}
+CRITICAL - 2021-01-13 14:31:56 --> noauth filter must have a matching alias defined.
+#0 C:\Users\bool\Desktop\framework\system\Filters\Filters.php(324): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('noauth')
+#1 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(373): CodeIgniter\Filters\Filters->enableFilter('noauth', 'before')
+#2 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\bool\Desktop\framework\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\bool\Desktop\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\bool\\D...')
+#5 {main}
+CRITICAL - 2021-01-13 14:32:28 --> noauth filter must have a matching alias defined.
+#0 C:\Users\bool\Desktop\framework\system\Filters\Filters.php(324): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('noauth')
+#1 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(373): CodeIgniter\Filters\Filters->enableFilter('noauth', 'before')
+#2 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\bool\Desktop\framework\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\bool\Desktop\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\bool\\D...')
+#5 {main}
+CRITICAL - 2021-01-13 14:36:05 --> noauth filter must have a matching alias defined.
+#0 C:\Users\bool\Desktop\framework\system\Filters\Filters.php(324): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('noauth')
+#1 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(373): CodeIgniter\Filters\Filters->enableFilter('noauth', 'before')
+#2 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\bool\Desktop\framework\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\bool\Desktop\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\bool\\D...')
+#5 {main}
+CRITICAL - 2021-01-13 14:37:06 --> noauth filter must have a matching alias defined.
+#0 C:\Users\bool\Desktop\framework\system\Filters\Filters.php(324): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('noauth')
+#1 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(373): CodeIgniter\Filters\Filters->enableFilter('noauth', 'before')
+#2 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\bool\Desktop\framework\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\bool\Desktop\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\bool\\D...')
+#5 {main}
+CRITICAL - 2021-01-13 14:37:07 --> noauth filter must have a matching alias defined.
+#0 C:\Users\bool\Desktop\framework\system\Filters\Filters.php(324): CodeIgniter\Filters\Exceptions\FilterException::forNoAlias('noauth')
+#1 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(373): CodeIgniter\Filters\Filters->enableFilter('noauth', 'before')
+#2 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\bool\Desktop\framework\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\bool\Desktop\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\bool\\D...')
+#5 {main}
+CRITICAL - 2021-01-13 14:42:30 --> Declaration of App\Filters\Noauth::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = NULL)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-13 14:44:45 --> Declaration of App\Filters\Noauth::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = NULL)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-13 14:47:08 --> Declaration of App\Filters\Noauth::before(CodeIgniter\HTTP\RequestInterface $request) must be compatible with CodeIgniter\Filters\FilterInterface::before(CodeIgniter\HTTP\RequestInterface $request, $arguments = NULL)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-13 14:48:13 --> Declaration of App\Filters\Noauth::after(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response) must be compatible with CodeIgniter\Filters\FilterInterface::after(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, $arguments = NULL)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-13 14:48:15 --> Declaration of App\Filters\Noauth::after(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response) must be compatible with CodeIgniter\Filters\FilterInterface::after(CodeIgniter\HTTP\RequestInterface $request, CodeIgniter\HTTP\ResponseInterface $response, $arguments = NULL)
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-01-13 16:23:17 --> Invalid file: templates/header.php
+#0 C:\Users\bool\Desktop\framework\system\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('templates/heade...')
+#1 C:\Users\bool\Desktop\framework\system\Common.php(1119): CodeIgniter\View\View->render('templates/heade...', Array, true)
+#2 C:\Users\bool\Desktop\framework\app\Controllers\Auth.php(40): view('templates/heade...', Array)
+#3 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(918): App\Controllers\Auth->login()
+#4 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#5 C:\Users\bool\Desktop\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\bool\Desktop\framework\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\bool\Desktop\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\bool\\D...')
+#8 {main}
