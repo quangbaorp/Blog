@@ -19,7 +19,8 @@ class Admin extends BaseController
 
 			$errors = [
 				'password' => [
-					'validateUser' => 'Email or Password don\'t match'
+					'validateUser' => 'Tài khoản hoặc mật khẩu không đúng',
+					'min_length' => 'Mật khẩu không được dưới 6 kí tự',
 				]
 			];
 

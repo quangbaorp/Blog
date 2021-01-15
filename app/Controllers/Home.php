@@ -11,7 +11,7 @@ class Home extends BaseController
 		$model = new User();
 		$data['user'] =  $model->where('id', $userID)->first();
 
-		echo view('Home/index' , $data);
+		echo view('Home/index' ,$data);
 	}
 
 	//--------------------------------------------------------------------

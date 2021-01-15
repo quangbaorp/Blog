@@ -14,12 +14,14 @@ class Auth extends BaseController
 			//let's do the validation here
 			$rules = [
 				'email' => 'required|min_length[6]|max_length[50]|valid_email',
-				'password' => 'required|min_length[8]|max_length[255]|validateUser[email,password]',
+				'password' => 'required|min_length[6]|max_length[255]|validateUser[email,password]',
 			];
 
 			$errors = [
+				
 				'password' => [
-					'validateUser' => 'Email or Password don\'t match'
+					'validateUser' => 'Tài khoản hoặc mật khẩu không đúng',
+					'min_length' => 'mật khẩu không được dưới 6 kí tự',
 				]
 			];
 
