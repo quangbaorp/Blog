@@ -30,19 +30,21 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index' , ['filter' => 'auth']);
+$routes->get('/', 'Home::index');
+// $routes->get('/profile', 'Profile::index' , ['filter' => 'auth']);
 $routes->group('auth', ['filter' => 'noauth'], function($routes)
 {
-	$routes->get('login' , 'Auth::login', ['as' => 'user.login']);
-	$routes->get('register' , 'Auth::register' , ['as' => 'user.regster']);
+	$routes->match(['get','post'], 'Auth::login', ['as' => 'user.login']);
+	$routes->match(['get','post'] , 'Auth::register' , ['as' => 'user.regster']);
 	
 });
-$routes->group('admin', ['filter' => 'noadmin'], function($routes)
+$routes->get('login' , 'Admin::login', ['filter' => 'noadmin'],['as' => 'admin.login']);
+$routes->group('manager', ['filter' => 'admin'], function($routes)
 {
-	$routes->get('login' , 'Admin::login', ['as' => 'admin.login']);
-	
+	$routes->get('dashboard' , 'Manager::Dashboard', ['as' => 'manager.dashboard']);
 	
 });
+
 
 /**
  * --------------------------------------------------------------------

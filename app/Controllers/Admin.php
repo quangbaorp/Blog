@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\User;
 class Admin extends BaseController
 {
     // view login user
@@ -9,12 +9,12 @@ class Admin extends BaseController
     {
         $data = [];
 		helper(['form']);
-        echo 'login';
+        
         if ($this->request->getMethod() == 'post') {
 			//let's do the validation here
 			$rules = [
 				'email' => 'required|min_length[6]|max_length[50]|valid_email',
-				'password' => 'required|min_length[8]|max_length[255]|validateUser[email,password]',
+				'password' => 'required|min_length[6]|max_length[255]|validateUser[email,password]',
 			];
 
 			$errors = [
@@ -27,28 +27,27 @@ class Admin extends BaseController
 				$data['validation'] = $this->validator;
 			}else{
 				$model = new User();
-				$user = $model->where('email', $this->request->getVar('email'))
-                                            ->first();
-                if($user['role'] === 1){
+				$user = $model->where('email', $this->request->getVar('email'))->first();
+                if($user['role'] === '1'){
                     $this->setUserSession($user);
-                    return redirect()->to('manager/admin');
+                    return redirect()->to('/manager/dashboard');
                 }
                 else {
+					$session = session();
                     $session->setFlashdata('error', 'Bạn không có quyền truy cập vào Admin');
                 }
-
-
 			}
         }
-        // echo view('templates/header', $data);
+        echo view('Admin/login', $data);
     }
+    
     private function setUserSession($user){
 		$data = [
 			'id' => $user['id'],
-			'fullname' => $user['firstname'],
+			'fullname' => $user['fullname'],
 			'email' => $user['email'],
-            'isLoggedIn' => true,
-            'role' => $user['role'],
+			'role' => $user['role'],
+			'isLoggedIn' => true,
 		];
 
 		session()->set($data);

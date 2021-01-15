@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controllers;
-
+use App\Models\User;
 class Auth extends BaseController
 {
     // view login user
@@ -9,7 +9,7 @@ class Auth extends BaseController
     {
         $data = [];
 		helper(['form']);
-        echo 'login';
+       
         if ($this->request->getMethod() == 'post') {
 			//let's do the validation here
 			$rules = [
@@ -25,19 +25,20 @@ class Auth extends BaseController
 
 			if (! $this->validate($rules, $errors)) {
 				$data['validation'] = $this->validator;
-			}else{
+				
+			}
+			else{
 				$model = new User();
 
-				$user = $model->where('email', $this->request->getVar('email'))
-											->first();
+				$user = $model->where('email', $this->request->getVar('email'))->first();
 
 				$this->setUserSession($user);
 				//$session->setFlashdata('success', 'Successful Registration');
-				return redirect()->to('dashboard');
+				return redirect()->to('/');
 
 			}
         }
-        // echo view('templates/header', $data);
+        echo view('Auth/login' , $data);
         
     }
     // end view login user
@@ -48,25 +49,25 @@ class Auth extends BaseController
     {
         $data = [];
 		helper(['form']);
-        echo 'register';
+       
         
 		if ($this->request->getMethod() == 'post') {
 			//let's do the validation here
+			
 			$rules = [
-				'firstname' => 'required|min_length[3]|max_length[20]',
-				'lastname' => 'required|min_length[3]|max_length[20]',
+				'fullname' => 'required|min_length[3]|max_length[100]',
 				'email' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.email]',
-				'password' => 'required|min_length[8]|max_length[255]',
-				'password_confirm' => 'matches[password]',
+				'password' => 'required|min_length[6]|max_length[255]',
+				// 'password_confirm' => 'matches[password]',
 			];
 
-			if (! $this->validate($rules)) {
+			if (!$this->validate($rules)) {
 				$data['validation'] = $this->validator;
 			}else{
 				$model = new User();
 
 				$newData = [
-					'fullname' => $this->request->getVar('firstname'),
+					'fullname' => $this->request->getVar('fullname'),
 					'email' => $this->request->getVar('email'),
                     'password' => $this->request->getVar('password'),
                     'role' => 0,
@@ -76,19 +77,18 @@ class Auth extends BaseController
 				$session = session();
 				$session->setFlashdata('success', 'Successful Registration');
 				return redirect()->to('/auth/login');
-
 			}
-        }
-        // echo view('templates/header', $data);
+		}
+        echo view('Auth/register' , $data);
     }
     // end view regsiter user
 
     private function setUserSession($user){
 		$data = [
 			'id' => $user['id'],
-			'firstname' => $user['firstname'],
-			'lastname' => $user['lastname'],
+			'fullname' => $user['fullname'],
 			'email' => $user['email'],
+			'role' => $user['role'],
 			'isLoggedIn' => true,
 		];
 

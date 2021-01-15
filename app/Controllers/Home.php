@@ -1,10 +1,17 @@
 <?php namespace App\Controllers;
-
+use App\Models\User;
 class Home extends BaseController
 {
 	public function index()
 	{
-		return view('welcome_message');
+		$data = [];
+		
+		$userID = session()->get('id') ? session()->get('id') : NULL;
+
+		$model = new User();
+		$data['user'] =  $model->where('id', $userID)->first();
+
+		echo view('Home/index' , $data);
 	}
 
 	//--------------------------------------------------------------------

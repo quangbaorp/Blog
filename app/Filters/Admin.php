@@ -11,7 +11,7 @@ class Admin implements FilterInterface
     {
         // Do something here
         if(session()->get('isLoggedIn') &&  session()->get('role') === 1){
-            return redirect()->to('manager/admin');
+            return redirect()->to('manager/dashboard');
         }
 
     }

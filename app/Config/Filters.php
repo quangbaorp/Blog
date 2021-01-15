@@ -12,8 +12,8 @@ class Filters extends BaseConfig
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
 		'auth' => \App\Filters\Auth::class,
 		'noauth' => \App\Filters\Noauth::class,
-		'admin' => \App\Filters\Noauth::class,
-		'noadmin' => \App\Filters\Noauth::class,
+		'admin' => \App\Filters\admin::class,
+		'noadmin' => \App\Filters\Noadmin::class,
 	];
 
 	// Always applied before every request
